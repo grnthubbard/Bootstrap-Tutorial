@@ -72,7 +72,10 @@
                     <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
                 </div>
                 <div class="col-md-5 text-center d-none d-md-block">
-                    <img class="img-fluid" src="book.jpg" alt="ebook cover">
+                    <!--tooltip-->
+                    <span>
+                        <img class="col-md-7" data-bs-toggle="tooltip" data-bs-placement="top" title="Net Ninja Book Cover" src="book.jpg" alt="ebook cover">
+                    </span>
                 </div>
             </div>
         </div>
@@ -257,6 +260,11 @@
                     <div class="mb-4 input-group">
                         <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
                         <input type="email" class="form-control" id="email" placeholder="e.g. mario@example.com">
+                        <!--tooltip-->
+                        <span class="input-group-text">
+                            <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Enter an email address we can reply to."></span>
+                            <i class="bi bi-question-circle text-muted"></i>
+                        </span>
                     </div>
 
                     <label for="name" class="form-label">Name</label>
@@ -267,7 +275,9 @@
 
                     <label for="subject" class="form-label">What is your question about?</label>
                     <div class="input-group mb-4">
-                        <span class="input-group-text"><i class="bi bi-chat-right-dots-fill"></i></span>
+                        <span class="input-group-text">
+                            <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="Pretty self explanatory."></span>
+                            <i class="bi bi-chat-right-dots-fill"></i></span>
                         <select class="form-select" id="subject">
                             <option value="pricing" selected>Pricing query</option>
                             <option value="content">Content query</option>
@@ -292,7 +302,13 @@
 </section>
 
 
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 
+</script>
 
 </body>
 </html>
